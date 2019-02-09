@@ -1,4 +1,5 @@
 #include <Wire.h>
+#include <Pixy2I2C>
 #define LeftTrigPin 5
 #define LeftEchoPin 4
 #define RightTrigPin 3
@@ -31,6 +32,7 @@ void setup()
     Serial.begin(9600);
     pinMode(ledPin, OUTPUT);      // Set the LED pin as output
     Wire.begin();
+    pixy.init();
     pinMode(LeftTrigPin, OUTPUT);
     pinMode(LeftEchoPin, INPUT);
     pinMode(RightTrigPin, OUTPUT);
