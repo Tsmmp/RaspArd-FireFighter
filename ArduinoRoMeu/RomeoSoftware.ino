@@ -48,7 +48,12 @@ void carTurnRight(int leftSpeed,int rightSpeed){      //Turn Right
   analogWrite (speedPin_M1,rightSpeed);    
   digitalWrite(directionPin_M2,LOW);
 }
-
+void spinFan(){
+  carStop();
+  analogWrite(Fan, 255);      
+  delay(4000); 
+  analogWrite(Fan, 0);
+}
 void setup()
 {
   pinMode(Fan,OUTPUT);
