@@ -56,14 +56,16 @@ void loop()
    getCoordinates();
    getAnalogs();
 
-   out+= String(result[0]);out += + ",";
-   out+= String(result[1]);out += + ",";
-   out+= String(result[2]);out += + ",";
-   out+= String(result[3]);out += + ",";
-   out+= String(result[4]);out += + ",";
-   out+= String(result[5]);out += + ",";
-   out+= String(result[6]);out += + ",";
+   out+= String(result[0]);out += ",";
+   out+= String(result[1]);out += ",";
+   out+= String(result[2]);out += ",";
+   out+= String(result[3]);out += ",";
+   out+= String(result[4]);out += ",";
+   //out+= String(result[5]);out += ",";
+   //out+= String(result[6]);out += ",";
+   
    Serial.println(out);
+   delay(500);
 }
 
 int getDistance(int trigPin, int echoPin){
@@ -174,8 +176,8 @@ void getAnalogs(){
   result[4] = analogRead(FlameSensorPin);
    for (int i=0;i<10;i++)
   {
-    val_x+=analogRead(A_X);delay(2);
-    val_y+=analogRead(A_Y);delay(2);
+    val_x+=analogRead(A_X);
+    val_y+=analogRead(A_Y);
   }
    result[5] =val_x/10;
    result[6] =val_y/10;
